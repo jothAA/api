@@ -1,5 +1,5 @@
 const express = require ("express");
-const userRouter = require ("./router/userRouter.js");
+const userRouter = require("./router/userRouter.js");
 
 const PORT = 3000;
 
@@ -10,7 +10,7 @@ app.get ("/", (req, res) => {
 
 });
 
-app.use(';api', )
+app.use("/api", userRouter);
 
 app.listen (PORT, () => {
     console.log ("Servidor online");
