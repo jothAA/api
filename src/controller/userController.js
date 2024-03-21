@@ -10,9 +10,10 @@ async function getAllUser(req, res){
             message: "Error getting users",
             body: error.message,
         });
-
     }
 }
+
+
 
 module.exports = {
     getAllUser,
