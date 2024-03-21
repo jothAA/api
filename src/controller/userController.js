@@ -13,7 +13,11 @@ async function getAllUser(req, res){
     }
 }
 
+async function createUser (req, res){
 
+const { name, email, password } = req.body;
+
+}
 
 module.exports = {
     getAllUser,
