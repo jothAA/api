@@ -28,6 +28,23 @@ async function createUser (req, res){
      }
  }
 
+ async function updateUser(req, res){
+    try{
+    const { id } = req.params;
+    const {name, email, password} = req.params;
+    
+    await userService.updateUser(id, name, email, password);
+
+    }catch (error) {
+        res.status(500).send({
+            message: "Error updating user!",
+            error: error.message
+
+        });
+    }
+ }
+
+
 module.exports = {
     getAllUser,
     createUser,

@@ -22,8 +22,23 @@ async function createUser(name, email, password){
 
 }
 
+async function updateUser(id, name, email, password){ 
+    const connection = await mysql.createConnection(databaseConfig);
 
+    const updateUser = 'UPdATE user SET name = ?, name = :, email = ? password = ? WHERE id = ?';
+    await connection.query(updateUser, [name, email,password, id]);
+
+}
+
+async function deleteUser(id){
+    const connection = await mysql.createConnection(databaseConfig);
+
+    await connection.query('DELETE FROM user WHERE id = )', [id]);
+
+    await connection.end();
+}
 module.exports = {
     getAllUser,
     createUser,
+    updateUser,
 };
