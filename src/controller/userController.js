@@ -48,4 +48,5 @@ async function createUser (req, res){
 module.exports = {
     getAllUser,
     createUser,
+    updateUser,
 };
